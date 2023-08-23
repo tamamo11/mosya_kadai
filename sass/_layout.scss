@@ -1,0 +1,73 @@
+@use 'mixin' as *;
+@use "sass:math";
+
+
+.l-header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1100;
+  @include breakpoint(wide) {
+    height: 70px;
+  }
+
+  &-logo {
+    width: 160px;
+    margin: 10px;
+    @include breakpoint(wide){
+      margin-left: 21px;
+      }
+    }
+  &-link {
+    width: 50px;
+    height: 50px;
+    background-color: $rGreen; //要修正
+    color: $linkblack;
+
+    @include breakpoint(wide) {
+      width: auto;
+      height: 70px;
+
+    }
+    }
+  }
+
+.l-topHead {
+  position: relative;
+  height: 300px;
+  padding-bottom: 320px;
+  background: transparent url(./assets/images/bg-hero3.png) no-repeat center -25px;
+
+  @include breakpoint(tablet) {
+    background-position-y: center;
+    height: 650px;
+    padding: 0;
+  }
+
+
+  &-body {
+    width: 100%;
+    max-width: 100%;
+    padding: 9px 0 13px;
+    @include breakpoint(tablet) {
+      width: auto;
+    }
+  }
+}
+.l-secBlack {
+  padding: 4em 0;
+  background-color: black;
+
+  .l-secWrap {
+    max-width: 1078px;
+  }
+}
+
+.l-topHead-layer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
