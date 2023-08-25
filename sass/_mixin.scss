@@ -10,15 +10,6 @@ $pblue: #D4F1F8;
 $liwhite: #E9F8FB;
 
 
-// /* medhia */
-// $screen01:  "screen and (max-width: 1200px)";
-// //ナビゲーション・フッター関係
-// $screen02:  "screen and (max-width: 1078px)";
-// //通常コンテンツ幅以下 2カラムへ
-// $screen03:  "screen and (max-width: 767px)";
-// //タブレット以下 1カラムへ
-// $screen04:  "screen and (max-width: 500px)";
-// //スマホ
 
 
 //メディアクエリ用mixin
@@ -29,12 +20,17 @@ $liwhite: #E9F8FB;
     }
   }
   @if $point == narrow {
-    @media (min-width:1078px) {
+    @media (min-width:1079px) {
       @content;
     }
   }
   @if $point == wide {
-    @media (min-width:1200px) {
+    @media (min-width:1201px) {
+      @content;
+    }
+  }
+  @if $point == swide {
+    @media (min-width:1281px) {
       @content;
     }
   }
