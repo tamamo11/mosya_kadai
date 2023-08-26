@@ -25,13 +25,41 @@
     display: block;
     box-sizing: border-box;
     position: relative;
-    background-color: $rGreen;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: $btnWidth;
+      height: $btnHeight;
+      background-color: $rGreen;
+      top: 15px;
+      left: calc( 50% - math.div(#{$btnWidth},2) ) ;
+
+      @include breakpoint(wide) {
+        display: none;
+      }
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: $btnWidth;
+      height: $btnHeight;
+      background-color: $rGreen;
+      bottom: 15px;
+      left: calc( 50% - math.div(#{$btnWidth},2) ) ;
+      @include breakpoint(wide) {
+        display: none;
+      }
+    }
+
     @include breakpoint(wide) {
       width: 0;
       height: 0;
     }
 
     span {
+      content: "";
       display: block;
       position: absolute;
       width: $btnWidth;
@@ -40,54 +68,85 @@
       top: calc( 50% - math.div(#{$btnHeight},2) ) ;
       left: calc( 50% - math.div(#{$btnWidth},2) ) ;
 
-      @include breakpoint(narrow) {
+      @include breakpoint(wide) {
         display: none;
       }
     }
   }
 
+  a.is-open {
+    background-color: $rGreen;
+    &::before {
+      transform: rotate(135deg);
+      top: 25px;
+      background-color: #fff;
+      transition-duration: 0.3s;
+    }
+    &::after {
+      transform: rotate(-135deg);
+      top: 25px;
+      background-color: #fff;
+      transition-duration: 0.3s;
+    }
 
+    > span.is-open {
+      display: none;
+    }
+  }
 }
 
 .p-nav {
   display: none;
   z-index: 999;
+  position: absolute;
+  top: 50;
+  left: 0;
   @include breakpoint(wide) {
-    display: block;
-  }
-  ul li {
-    position: relative;
-
-    a{
-      padding: 10px;
-      @include breakpoint(wide) {
-        height: 70px;
-        padding: 0 10px;
-      }
-      @include breakpoint(swide) {
-        padding: 0 15px;
-      }
-    }
-  }
-
+  display: block;
+  position: static;
 }
 
-.p-menu {
-  display: flex;
-  font-weight: 700;
-  &-item {
-    position: relative;
-    text-align: left;
-    white-space: nowrap;
+  .p-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100vw;
+    @include breakpoint(wide) {
+      width: auto;
+    }
 
-    a {
+    &-item a {
       display: flex;
       align-items: center;
-      height: 70px;
-      text-decoration: none;
+      padding: 10px;
+      font-weight: 700;
+    }
+    .p-submenu {
+      display: none;
+    }
+    @include breakpoint(wide) {
+      display: flex;
+      flex-direction: row;
+      font-weight: 700;
+
+      &-item {
+        position: relative;
+        text-align: left;
+        white-space: nowrap;
+
+        a {
+          padding: 0 10px;
+          height: 70px;
+          text-decoration: none;
+          @include breakpoint(swide) {
+            padding: 0 15px;
+        }
+      }
+    }
     }
   }
 }
+
 
 .p-submenu {
   // display: none;
@@ -114,12 +173,17 @@
 }
 
 .p-order {
-  background-color: $rGreen;
-  color: #fff;
-  a {
-    display: flex;
-    align-items: center;
-
+  display: none;
+  @include breakpoint(wide) {
+    display: block;
+    background-color: $rGreen;
+    color: #fff;
+    a {
+      display: flex;
+      align-items: center;
+      height: 70px;
+      padding: 0 15px;
+    }
   }
 }
 
