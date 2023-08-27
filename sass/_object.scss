@@ -132,11 +132,13 @@
     }
     .p-submenu {
       display: none;
+
     }
     @include breakpoint(wide) {
       display: flex;
       flex-direction: row;
       font-weight: 700;
+      z-index: 9999;
 
       &-item {
         position: relative;
@@ -217,6 +219,10 @@
   position: static;
   z-index: 1000;
   background-color: #fff;
+  @include breakpoint(wide) {
+    position: absolute;
+    top: 70px;
+  }
 
   &-item {
     position: relative;
