@@ -104,6 +104,7 @@
   @include breakpoint(wide) {
   display: block;
   position: static;
+  max-height: 70px;
 }
 
   .p-menu {
@@ -113,13 +114,21 @@
     width: 100vw;
     @include breakpoint(wide) {
       width: auto;
+      max-height: 70px;
     }
 
-    &-item a {
+    &-item >a {
       display: flex;
       align-items: center;
       padding: 10px;
       font-weight: 700;
+
+      &::after{
+        content: "";
+      }
+      &::before{
+        content: "";
+      }
     }
     .p-submenu {
       display: none;
@@ -147,21 +156,85 @@
   }
 }
 
+.p-menu-item:hover {
+  background-color: $wblue;
+  @include breakpoint(wide) {
+    background-color: $pblue;
+  }
+}
+
+.p-submenu-item:hover {
+  background-color: $wblue;
+  @include breakpoint(wide) {
+    background-color: $pblue;
+  }
+}
+
+
+.p-menu-item {
+  position: relative;
+
+  .first-span {
+    content: "";
+    box-sizing: border-box;
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: $linkblack;
+    position: absolute;
+    top: 20px;
+    right: 13px;
+    margin-top: -1px;
+    z-index: 9;
+
+    @include breakpoint(wide) {
+      display: none;
+    }
+  }
+  .second-span {
+    content: "";
+    box-sizing: border-box;
+    display: block;
+    width: 2px;
+    height: 24px;
+    background-color: $linkblack;
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    margin-top: -12px;
+    &.is-open {
+      display:none;
+    }
+    @include breakpoint(wide) {
+      display: none;
+    }
+  }
+}
+
+
 
 .p-submenu {
-  // display: none;
-  position: absolute;
-  top: 70px;
+  position: static;
   z-index: 1000;
+  background-color: #fff;
 
   &-item {
     position: relative;
     font-weight: 400;
+
+    >a {
+      display: flex;
+      align-items: center;
+      padding: 10px 25px 10px 10px;
+      font-weight: 400;
+    }
+
     @include breakpoint(wide) {
       background-color: $liwhite;
-      display: none;
+      display: flex;
+      flex-direction: column;
     }
-    a {
+    >a {
       display: flex;
       align-items: center;
       box-sizing: border-box;

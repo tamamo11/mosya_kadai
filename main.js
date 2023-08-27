@@ -9,4 +9,10 @@ $(document).ready(function() {
   });
 
 
+  $(".p-menu .p-menu-item").hover(function() {
+    if ($(this).find(".p-submenu").length) {
+      $(this).find(".p-submenu").slideToggle();
+      $(this).find(".second-span").toggleClass("is-open");
+    }
+  });
 });
