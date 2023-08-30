@@ -222,6 +222,10 @@ body {
   background-color: #fff;
 }
 
+body.is-open {
+  position: fixed;
+}
+
 ul, li {
   list-style: none;
   box-sizing: border-box;
