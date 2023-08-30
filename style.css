@@ -220,7 +220,6 @@ body {
   font-size: 1.6rem;
   color: #121212;
   background-color: #fff;
-  overflow: hidden;
 }
 
 ul, li {
@@ -532,35 +531,35 @@ a:link, a:visited, a:hover, a:active {
   }
 }
 
-.p-submenu {
+.p-nav .p-menu .p-submenu {
   position: static;
   z-index: 1000;
   background-color: #fff;
 }
 @media (min-width: 1201px) {
-  .p-submenu {
+  .p-nav .p-menu .p-submenu {
     position: absolute;
     top: 70px;
   }
 }
-.p-submenu-item {
+.p-nav .p-menu .p-submenu-item {
   position: relative;
   font-weight: 400;
 }
-.p-submenu-item > a {
+.p-nav .p-menu .p-submenu-item > a {
   display: flex;
   align-items: center;
   padding: 10px 25px 10px 10px;
   font-weight: 400;
 }
 @media (min-width: 1201px) {
-  .p-submenu-item {
+  .p-nav .p-menu .p-submenu-item {
     background-color: #E9F8FB;
     display: flex;
     flex-direction: column;
   }
 }
-.p-submenu-item > a {
+.p-nav .p-menu .p-submenu-item > a {
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -814,6 +813,11 @@ a:link, a:visited, a:hover, a:active {
   transition-property: all;
   transition-duration: 0.3s;
   transition-timing-function: ease;
+}
+
+.u-scroll-test {
+  height: 1000px;
+  background-color: #fff;
 }
 
 .material-symbols-outlined {

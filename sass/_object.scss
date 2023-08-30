@@ -215,7 +215,7 @@
 
 
 
-.p-submenu {
+.p-nav .p-menu .p-submenu {
   position: static;
   z-index: 1000;
   background-color: #fff;
@@ -498,6 +498,10 @@
   transition-timing-function: ease;
 }
 
+.u-scroll-test {
+  height: 1000px;
+  background-color: #fff;
+}
 
 //icon
 
