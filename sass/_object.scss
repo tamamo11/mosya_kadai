@@ -168,7 +168,8 @@
 .p-submenu-item:hover {
   background-color: $wblue;
   @include breakpoint(wide) {
-    background-color: $pblue;
+    background-color: #fff;
+    color: #2498B3;
   }
 }
 
@@ -214,14 +215,18 @@
 }
 
 
-
-.p-nav .p-menu .p-submenu {
+// .p-nav .p-menu
+ .p-submenu {
   position: static;
   z-index: 1000;
   background-color: #fff;
   @include breakpoint(wide) {
     position: absolute;
     top: 70px;
+
+    >li:hover {
+      background-color: #fff;
+    }
   }
 
   &-item {

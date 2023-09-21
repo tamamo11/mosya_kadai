@@ -489,7 +489,8 @@ a:link, a:visited, a:hover, a:active {
 }
 @media (min-width: 1201px) {
   .p-submenu-item:hover {
-    background-color: #D4F1F8;
+    background-color: #fff;
+    color: #2498B3;
   }
 }
 
@@ -535,35 +536,38 @@ a:link, a:visited, a:hover, a:active {
   }
 }
 
-.p-nav .p-menu .p-submenu {
+.p-submenu {
   position: static;
   z-index: 1000;
   background-color: #fff;
 }
 @media (min-width: 1201px) {
-  .p-nav .p-menu .p-submenu {
+  .p-submenu {
     position: absolute;
     top: 70px;
   }
+  .p-submenu > li:hover {
+    background-color: #fff;
+  }
 }
-.p-nav .p-menu .p-submenu-item {
+.p-submenu-item {
   position: relative;
   font-weight: 400;
 }
-.p-nav .p-menu .p-submenu-item > a {
+.p-submenu-item > a {
   display: flex;
   align-items: center;
   padding: 10px 25px 10px 10px;
   font-weight: 400;
 }
 @media (min-width: 1201px) {
-  .p-nav .p-menu .p-submenu-item {
+  .p-submenu-item {
     background-color: #E9F8FB;
     display: flex;
     flex-direction: column;
   }
 }
-.p-nav .p-menu .p-submenu-item > a {
+.p-submenu-item > a {
   display: flex;
   align-items: center;
   box-sizing: border-box;
